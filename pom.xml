@@ -14,6 +14,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <version.jbossas7>7.1.1.Final</version.jbossas7>
     <version.jcache>0.5</version.jcache>
+    <version.twitter4j>2.2.5</version.twitter4j>
   </properties>
 
   <repositories>
@@ -46,11 +47,9 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.jboss.spec</groupId>
-      <artifactId>jboss-javaee-web-6.0</artifactId>
-      <version>3.0.0.Final</version>
-      <type>pom</type>
-      <scope>provided</scope>
+      <groupId>org.twitter4j</groupId>
+      <artifactId>twitter4j-core</artifactId>
+      <version>${version.twitter4j}</version>
     </dependency>
     <dependency>
       <groupId>javax.cache</groupId>
@@ -67,6 +66,15 @@
       <artifactId>cache-annotations-ri-cdi</artifactId>
       <version>${version.jcache}</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.jboss.spec</groupId>
+      <artifactId>jboss-javaee-web-6.0</artifactId>
+      <version>3.0.0.Final</version>
+      <type>pom</type>
+      <scope>provided</scope>
+    </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
