@@ -13,6 +13,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <version.jbossas7>7.1.1.Final</version.jbossas7>
+    <version.jcache>0.5</version.jcache>
   </properties>
 
   <repositories>
@@ -54,17 +55,17 @@
     <dependency>
       <groupId>javax.cache</groupId>
       <artifactId>cache-api</artifactId>
-      <version>0.5</version>
+      <version>${version.jcache}</version>
     </dependency>
     <dependency>
       <groupId>javax.cache.implementation</groupId>
       <artifactId>cache-ri-impl</artifactId>
-      <version>0.5</version>
+      <version>${version.jcache}</version>
     </dependency>
     <dependency>
       <groupId>javax.cache.implementation</groupId>
       <artifactId>cache-annotations-ri-cdi</artifactId>
-      <version>0.5</version>
+      <version>${version.jcache}</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
