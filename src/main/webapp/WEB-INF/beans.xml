@@ -4,4 +4,10 @@
    xsi:schemaLocation="
       http://java.sun.com/xml/ns/javaee 
       http://java.sun.com/xml/ns/javaee/beans_1_0.xsd">
+  <interceptors>
+    <class>javax.cache.annotation.impl.cdi.CacheResultInterceptor</class>
+    <class>javax.cache.annotation.impl.cdi.CachePutInterceptor</class>
+    <class>javax.cache.annotation.impl.cdi.CacheRemoveEntryInterceptor</class>
+    <class>javax.cache.annotation.impl.cdi.CacheRemoveAllInterceptor</class>
+  </interceptors>
 </beans>
