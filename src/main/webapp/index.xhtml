@@ -16,11 +16,13 @@
       <p class="lead">Twitter viewer webapp written in Java EE</p>
     </header>
     <div>
-      <h:form class="well search">
-        <h:inputText value="#{eetter.query}" class="input-large search-query" style="height:28px"/>
-        <h:commandButton value="Search" action="#{eetter.search}" class="btn" />
+      <h:form id="searchForm" class="well search">
+        <h:inputText id="query" value="#{eetter.query}" class="input-large search-query" style="height:28px" required="true" />
+        <h:commandButton id="searchButton" value="Search" action="#{eetter.search}" class="btn" />
+        <h:message for="query"/>
       </h:form>
 
+      <h:outputText value="Search taken #{eetter.searchTimeTaken} ms" rendered="#{eetter.tweetsSize != 0}" />
       <h:dataTable value="#{eetter.tweets}" var="t"
                    rendered="#{eetter.tweetsSize != 0}"
                    styleClass="table table-bordered">

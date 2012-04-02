@@ -14,25 +14,37 @@ public class Eetter {
     private TwitterService twitter;
     private String query;
     private List<Tweet> tweets;
-    
+    private long searchTimeTaken;
+
+    public void search() throws Exception {
+        long begin = System.currentTimeMillis();
+        tweets = twitter.search(query);
+        searchTimeTaken = System.currentTimeMillis() - begin;
+    }
+
+
     public String getQuery() {
         return query;
     }
-    
+
     public void setQuery(String query) {
         this.query = query;
     }
-    
+
     public List<Tweet> getTweets() {
         return tweets;
     }
-    
+
     public void setTweets(List<Tweet> tweets) {
         this.tweets = tweets;
     }
-    
-    public void search() throws Exception {
-        tweets = twitter.search(query);
+
+    public long getSearchTimeTaken() {
+        return searchTimeTaken;
+    }
+
+    public void setSearchTimeTaken(long searchTimeTaken) {
+        this.searchTimeTaken = searchTimeTaken;
     }
 
     /*
