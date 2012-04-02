@@ -34,4 +34,15 @@ public class Eetter {
     public void search() throws Exception {
         tweets = twitter.search(query);
     }
+
+    /*
+     * List.size() from EL doesn't work in some platforms, see:
+     * https://issues.apache.org/bugzilla/show_bug.cgi?id=51544
+     */
+    public int getTweetsSize() {
+        if (tweets == null) {
+            return 0;
+        }
+        return tweets.size();
+    }
 }
