@@ -1,12 +1,11 @@
 package jp.programmers.eetter;
 
-import javax.cache.annotation.CacheDefaults;
-import javax.cache.annotation.CacheResult;
-import javax.cache.annotation.CacheRemoveAll;
-import javax.cache.annotation.CacheRemoveEntry;
-
 import java.util.List;
 import java.util.logging.Logger;
+import javax.cache.annotation.CacheDefaults;
+import javax.cache.annotation.CacheRemoveAll;
+import javax.cache.annotation.CacheRemoveEntry;
+import javax.cache.annotation.CacheResult;
 import static java.util.logging.Level.*;
 import twitter4j.Query;
 import twitter4j.QueryResult;
@@ -22,7 +21,6 @@ public class TwitterService {
 
     @CacheResult
     public List<Tweet> search(String queryString) throws TwitterException {
-        //new Exception().printStackTrace();
         log.log(INFO, "Twitter search query={0}", queryString);
         Twitter twitter = new TwitterFactory().getInstance();
         Query query = new Query(queryString);
